@@ -9,12 +9,9 @@ def delin(n):
             a.append(n // i)
     a.sort()
     return a
-
-
 s = 710017
 a = []
 g = []
-
 while len(a) != 5:
     d = delin(s)
     r = s
