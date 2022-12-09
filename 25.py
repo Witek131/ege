@@ -9,6 +9,8 @@ def delin(n):
             a.append(n // i)
     a.sort()
     return a
+
+
 s = 710017
 a = []
 g = []
