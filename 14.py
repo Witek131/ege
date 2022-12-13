@@ -8,5 +8,5 @@ for x in range(9):
     for y in range(9):
         a = str(x)
         b = str(y)
-        if (int('88' + a + '4' + b, 9) + int('7' + a + '44' + b,11)) % 61 == 0:
-            print(x, y, (int('88' + a + '4' + b, 9) + int('7' + a + '44' + b,11)) // 61)
+        if (int('88' + a + '4' + b, 9) + int('7' + a + '44' + b, 11)) % 61 == 0:
+            print(x, y, (int('88' + a + '4' + b, 9) + int('7' + a + '44' + b, 11)) // 61)
