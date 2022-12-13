@@ -12,5 +12,5 @@ for i in range(8 ** 4, 8 ** 5):
                 f = 0
                 break
         if f:
-            su+=1
+            su += 1
 print(su)
