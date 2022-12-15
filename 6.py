@@ -11,11 +11,11 @@ from turtle import *
 
 left(90)
 for i in range(7):
-    forward(100)
+    forward(200)
     right(120)
 pu()
 for x in range(11):
     for y in range(11):
-        goto(x * 10, y * 10)
+        goto(x * 20, y * 20)
         dot(5)
 done()

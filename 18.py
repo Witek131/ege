@@ -7,7 +7,6 @@ for i in range(len(a)):
     a[i] = list(map(int, a[i].split(';')))
 print(a)
 print(b)
-
 for i in range(len(a)):
     for j in range(len(a)):
         if i == 0 or j == 0:
