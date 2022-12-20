@@ -20,34 +20,30 @@
 количество контейнеров в одном блоке, затем минимальное количество ячеек
 для хранения всех контейнеров. """
 f = open('file/26.txt').read().split('\n')[1:]
-s = {'A': [], 'B': []}
+s = []
 for i in f:
-    a = i.split()
-    if a:
-        s[a[1]].append(int(a[0]))
-s['A'].sort()
-s['B'].sort()
-print(s['B'])
-print(s['A'])
-s1 = 0
-a = []
-b = []
-k = 0
+    s1 = i.split()
+    if s1:
+        s.append([int(s1[0]), s1[1], 0])
 
-for i in range(len(s['A'])):
-    if s1 % 2 == 0:
-        for j in range(k, len(s['B'])):
-            if s['A'][k] + 7 <= s['B'][j]:
-                s1 += 1
-                a.append(s['B'][j])
-                break
-        k1 = j
+s.sort()
+n = 0
+while n <= len(s):
+    a = 0
+    for i in range(len(s)):
+        if s[i][2] == 0:
+            s[i][2] = 1
+            a = 1
+            saa = s[i][1]
+            n += 1
+            sqq = s[i][0]
+            break
+    for i in range(len(s)):
+        if a % 2 and s[i][1] != saa and s[i][0] == 0 and s[i][0] + 7 <= sqq:
+            s[i][2] = 1
+            a += 1
+            saa = s[i][1]
+            n += 1
+            sqq = s[i][0]
 
-    else:
-        for j in range(k2, len(s['A'])):
-            if s['B'][k] + 7 <= s['A'][j]:
-                s1 += 1
-                b.append(s['A'][j])
-                break
-        k2 = j
-
+    print(s)
