@@ -4,6 +4,7 @@ s2 = []
 s3 = []
 for i in range(len(f)):
     a = f[i].split(';')
+    print(a)
     if a[0]:
         s1.append(int(a[0]))
         s2.append(int(a[1]))

@@ -25,6 +25,6 @@ def f(x, p):
             return f(x + 2, p + 1) or f(x * 2, p + 1)
 
 print(f(47,0))
-"""for i in range(1, 200):
+for i in range(1, 200):
     if f(i, 0) and i % 3 != 0:
-        print(i)"""
+        print(i)
