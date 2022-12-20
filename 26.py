@@ -31,7 +31,6 @@ n = 0
 j = 0
 while n < len(s):
     a = 0
-
     for i in range(j, len(s)):
         if s[i][2] == 0:
             k += 1
