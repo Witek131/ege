@@ -11,7 +11,7 @@
 a = [0] * 1000
 a[1] = 1
 s = 0
-for i in range(11):
+for i in range(1,11):
     a[i + 1] += a[i]
     a[i + 2] += a[i]
     if s == 0:

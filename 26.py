@@ -19,34 +19,31 @@
 В ответе запишите два целых числа: сначала максимально возможное
 количество контейнеров в одном блоке, затем минимальное количество ячеек
 для хранения всех контейнеров. """
-f = open('file/26.txt').read().split('\n')
+f = open('file/26.txt').read().split('\n')[1:]
 s = []
 for i in f:
     s1 = i.split()
     if s1:
         s.append([int(s1[0]), s1[1], 0])
-k = 0
-s.sort(reverse=True)
+
+s.sort()
 n = 0
-j = 0
-while n < len(s):
+while n <= len(s):
     a = 0
-    for i in range(j, len(s)):
+    for i in range(len(s)):
         if s[i][2] == 0:
-            k += 1
             s[i][2] = 1
+            a = 1
             saa = s[i][1]
-            j = i
             n += 1
             sqq = s[i][0]
             break
-
-    for i in range(j+1, len(s)):
-        # print(s[i][1] != saa , s[i][2] == 0 , s[i][0] + 7 <= sqq)
-        if s[i][1] != saa and s[i][2] == 0 and s[i][0] - 7 <= sqq:
+    for i in range(len(s)):
+        if a % 2 and s[i][1] != saa and s[i][0] == 0 and s[i][0] + 7 <= sqq:
             s[i][2] = 1
+            a += 1
             saa = s[i][1]
             n += 1
             sqq = s[i][0]
-#print(s)
-print(k)
+
+    print(s)
