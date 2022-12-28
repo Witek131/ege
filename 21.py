@@ -14,19 +14,21 @@ def f(x, p):
             if x >= 103:
                 return False
     if p % 2 == 1:
-        if (x+1) % 3 == 0:
-            return f(x+2, p+1) or f(x*2, p+1)
-        elif (x*2) % 3 ==0:
-            return f(x+2, p+1) or f(x+1, p+1)
+        if (x + 1) % 3 == 0:
+            return f(x + 2, p + 1) or f(x * 2, p + 1)
+        elif (x * 2) % 3 == 0:
+            return f(x + 2, p + 1) or f(x + 1, p + 1)
         elif (x + 2) % 3 == 0:
-            return f(x*2, p+1) or f(x+1, p+1)
+            return f(x * 2, p + 1) or f(x + 1, p + 1)
     else:
-        if (x+1) % 3 == 0:
-            return f(x+2, p+1) and f(x*2, p+1)
-        elif (x*2) % 3 ==0:
-            return f(x+2, p+1) and f(x+1, p+1)
+        if (x + 1) % 3 == 0:
+            return f(x + 2, p + 1) and f(x * 2, p + 1)
+        elif (x * 2) % 3 == 0:
+            return f(x + 2, p + 1) and f(x + 1, p + 1)
         elif (x + 2) % 3 == 0:
-            return f(x*2, p+1) and f(x+1, p+1)
+            return f(x * 2, p + 1) and f(x + 1, p + 1)
+
+
 print(f(47, 0))
 for i in range(1, 200):
     if f(i, 0) and i % 3 != 0:
