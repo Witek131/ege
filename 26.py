@@ -26,7 +26,7 @@ for i in f:
     if s1:
         s.append([int(s1[0]), s1[1], 0])
 k = 0
-s.sort(reverse=True)
+s.sort()
 n = 0
 j = 0
 while n < len(s):
@@ -44,10 +44,10 @@ while n < len(s):
 
     for i in range(j+1, len(s)):
         # print(s[i][1] != saa , s[i][2] == 0 , s[i][0] + 7 <= sqq)
-        if s[i][1] != saa and s[i][2] == 0 and s[i][0] - 7 <= sqq:
+        if s[i][1] != saa and s[i][2] == 0 and s[i][0] - 7 >= sqq:
             s[i][2] = 1
             saa = s[i][1]
             n += 1
             sqq = s[i][0]
-#print(s)
+print(s)
 print(k)

@@ -4,7 +4,7 @@ s2 = []
 s3 = []
 for i in range(len(f)):
     a = f[i].split(';')
-    print(a)
+    #print(f[i])
     if a[0]:
         s1.append(int(a[0]))
         s2.append(int(a[1]))
@@ -14,7 +14,6 @@ for i in range(len(f)):
             a[2] = a[2][1:]
             a[-1] = a[-1][:-1]
             s3.append(' '.join(a[2:]).split())
-        # print(s3)
 s4 = []
 # print(s3)
 for i in range(len(s3)):
