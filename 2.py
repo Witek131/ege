@@ -12,13 +12,29 @@ w, x, y, z.
 в ответе пишите подряд, никаких разделителей между буквами ставить
 не нужно.
 """
-print('x y z w')
-for x in range(2):
-    for y in range(2):
-        for z in range(2):
-            for w in range(2):
-                if not (not y or x) or (not z or w) or not z:
-                    pass
-                else:
-                    print(x, y, z, w)
-                    #yxzw
+# print('x y z w')
+# for x in range(2):
+#     for y in range(2):
+#         for z in range(2):
+#             for w in range(2):
+#                 if not (not y or x) or (not z or w) or not z:
+#                     pass
+#                 else:
+#                     print(x, y, z, w)
+#                     # yxzw
+
+from itertools import *
+
+
+def f1(x, y, z, w):
+    return not (((not x or y) and (not y or w)) or (z == (x or y)))
+
+
+s = set()
+for a, b, c, d, e, f, g in product([0, 1], repeat=7):
+    rows = [[1, a, b, 1], [1, c, d, e], [f, 1, g, 1]]
+    #print(rows)
+    for per in permutations('xyzw'):
+        if all([f1(**dict(zip(per, row))) == row[-1] for row in rows]):
+            s.add((per))
+print(s)
