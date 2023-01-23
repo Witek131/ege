@@ -15,13 +15,14 @@ print(s + 2)
 количество идущих подряд троек символов ZXY или ZYX.
 Ссылка на файл"""
 
-s = open('3021.txt').readline()
+s = open('file/3021.txt').readline()
 mx = c = 0
 for st in range(3):
     for i in range(st, len(s), 3):
         if s[i:i + 3] in ('ZXY', 'ZYX'):
-        c += 1
-    else:
-    c = 0
-    mx = max(mx, c)
+            c += 1
+        else:
+            c = 0
+        mx = max(mx, c)
+
 print(mx)
