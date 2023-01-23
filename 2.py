@@ -17,7 +17,7 @@ w, x, y, z.
 #     for y in range(2):
 #         for z in range(2):
 #             for w in range(2):
-#                 if not (not y or x) or (not z or w) or not z:
+#                 if (((not x or y) and (not y or w)) or (z == (x or y))):
 #                     pass
 #                 else:
 #                     print(x, y, z, w)
@@ -36,5 +36,5 @@ for a, b, c, d, e, f, g in product([0, 1], repeat=7):
     #print(rows)
     for per in permutations('xyzw'):
         if all([f1(**dict(zip(per, row))) == row[-1] for row in rows]):
-            s.add((per))
+            s.add(per)
 print(s)
