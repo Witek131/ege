@@ -10,4 +10,18 @@ s = -1
 for i in f:
     if i.count('A') <= 2 and len(i) > s:
         s = len(i)
-print(s+2)
+print(s + 2)
+"""Текстовый файл содержит строку из заглавных латинских букв X, Y и Z. Определите максимальное
+количество идущих подряд троек символов ZXY или ZYX.
+Ссылка на файл"""
+
+s = open('3021.txt').readline()
+mx = c = 0
+for st in range(3):
+    for i in range(st, len(s), 3):
+        if s[i:i + 3] in ('ZXY', 'ZYX'):
+        c += 1
+    else:
+    c = 0
+    mx = max(mx, c)
+print(mx)
