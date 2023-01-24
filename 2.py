@@ -3,8 +3,8 @@ F=¬(y →x) \/ (z →w) \/ ¬z,
 но успел заполнить лишь фрагмент из трёх различных её строк, даже не указав, какому столбцу таблицы соответствует каждая из переменных
 w, x, y, z.
 F
- \0\ \ \0
-0\1\ \ \0
+ \0\ \0
+0\1\ \0
 1\ \0\0
 Определите, какому столбцу таблицы соответствует каждая из переменных
 w, x, y, z.
@@ -12,6 +12,8 @@ w, x, y, z.
 в ответе пишите подряд, никаких разделителей между буквами ставить
 не нужно.
 """
+from itertools import *
+
 print('x y z w')
 for x in range(2):
     for y in range(2):
@@ -21,4 +23,18 @@ for x in range(2):
                     pass
                 else:
                     print(x, y, z, w)
-                    #yxzw
+                    # yxzw
+
+
+def r(x, y, z, w):
+    return not(not (not y or x) or (not z or w) or not z)
+
+
+for a, b, c, d in product([0, 1], repeat=4):
+    t = ((a, 0, b, 0, 1),
+         (0, 1, c, 0, 1),
+         (1, d, 0, 0, 1))
+    if len(set(t)) == len(t):
+        for i in permutations('xyzw'):
+            if all(r(**dict(zip(i, j))) == 0 for j in t):
+                print(*i)
