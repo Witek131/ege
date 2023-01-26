@@ -33,10 +33,10 @@ print(a[11], a)
 a = [0] * 1000
 a[3] = 1
 s = 0
-for i in range(1, 13):
+for i in range(1, 121):
     a[i + 1] += a[i]
     if i != 9:
         a[i + 2] += a[i]
-    if i<6 or i>=10:
+    if i<5 or i>=10:
         a[i * 2] += a[i]
-print(a[12], a)
+print(a[120], a)
