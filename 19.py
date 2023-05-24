@@ -33,7 +33,6 @@ def f(x, p):
         else:
             return f(x + 2, p + 1) and f(x * 2, p + 1)
 
-
 for i in range(1, 500):
     if f(i, 0) and i % 3 != 0:
         print(i)
