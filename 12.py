@@ -24,7 +24,7 @@
 
 
 def prost(n):
-    for i in range(2, int(n ** 0.5)+1):
+    for i in range(2, int(n ** 0.5) + 1):
         if n % i == 0:
             return False
     return True
@@ -46,3 +46,27 @@ for i in range(1, 500):
     if prost(n):
         print(i, n)
         break
+'''Какое количество вариантов строки можно получить в результате работы приведенного ниже алгоритма, 
+если использовать четыре 1, три 3 и две 2 на входе?
+НАЧАЛО
+ПОКА нашлось (133) ИЛИ нашлось (221) ИЛИ нашлось (23) ЕСЛИ нашлось (133)
+ТО заменить (133, 1)
+ЕСЛИ нашлось (221)
+ТО заменить (221,31)
+ЕСЛИ нашлось (23)
+ТО заменить (23, 21)
+КОНЕЦ ПОКА 
+КОНЕЦ
+'''
+from itertools import permutations
+
+ss = [''.join(s) for s in permutations('1' * 4 + '3' * 3 + '2' * 2)]
+#print(ss)
+d=[]
+for s in ss:
+    while '133' in s or '221' in s or '23' in s:
+        s = s.replace('133', '1', 1)
+        s = s.replace('221', '31', 1)
+        s = s.replace('23', '21', 1)
+    d.append(s)
+print(len(set(d)))
