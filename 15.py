@@ -69,10 +69,11 @@ print(d)
 тождественно истинна, то есть принимает значение 1 при любых целых неотрицательных x и y?"""
 for a in range(200, 0, -1):
     s = True
-    for x in range(2000, 0, -1):
-        for y in range(2000, 0, -1):
+    for x in range(200, 0, -1):
+        for y in range(200, 0, -1):
             if not ((not (x <= 9) or (x * x <= a)) and (not (y * y <= a) or (y <= 9))):
                 s = False
+
     if s:
         print(a)
         break
