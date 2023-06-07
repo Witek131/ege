@@ -8,16 +8,16 @@
 2 ∙ 109.
 Вам даны два входных файла (A и B), каждый из которых имеет"""
 
-s = list(map(int, open("file/27-B.txt").read().split()[1:]))
-f = 0
-ss = 0
-d = [0] * 999
-d[0] = 1
-for i in range(len(s)):
-    f += s[i]
-    ss += d[f % 999]
-    d[f % 999] += 1
-print(ss)
+# s = list(map(int, open("file/27-B.txt").read().split()[1:]))
+# f = 0
+# ss = 0
+# d = [0] * 999
+# d[0] = 1
+# for i in range(len(s)):
+#     f += s[i]
+#     ss += d[f % 999]
+#     d[f % 999] += 1
+# print(ss)
 
 '''Дана последовательность натуральных чисел. Назовём парой любые два
 числа из последовательности. Необходимо определить количество пар,
@@ -32,9 +32,7 @@ print(ss)
 Вам даны два входных файла (A и B), каждый из которых имеет описанную
 выше структуру. В ответе укажите два числа: сначала искомое значение для
 файла A, затем – для файла B.'''
-
-
-def f(n):
+def f1(n):
     count = 0
     while not n % 2:
         count += 1
@@ -44,7 +42,13 @@ def f(n):
     return count
 
 
-f = open('file/27-A1.txt')
-f=[int(i) for i in f][1:]
-pri
-
+f = open('file/27-B1.txt')
+f = [int(i) for i in f][1:]
+a = [[0] * 11 for i in range(3)]
+summ=0
+print(a)
+for i in range(len(f)):
+    for j in range(10 - f1(f[i]), 11):
+        summ += a[(3 - f[i] % 3) % 3][j]
+    a[f[i] % 3][f1(f[i])]+=1
+print(summ)
