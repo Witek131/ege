@@ -37,8 +37,8 @@ def f1(n):
     while not n % 2:
         count += 1
         n //= 2
-    if count > 10:
-        count = 10
+    if count > 12:
+        count = 12
     return count
 
 
