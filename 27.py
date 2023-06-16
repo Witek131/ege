@@ -44,11 +44,12 @@ def f1(n):
 
 f = open('file/27-B1.txt')
 f = [int(i) for i in f][1:]
-a = [[0] * 11 for i in range(3)]
+a = [[0] * 13 for i in range(3)]
 summ=0
 print(a)
 for i in range(len(f)):
     for j in range(10 - f1(f[i]), 11):
         summ += a[(3 - f[i] % 3) % 3][j]
+    #print(f1(f[i]))
     a[f[i] % 3][f1(f[i])]+=1
 print(summ)
