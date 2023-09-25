@@ -5,15 +5,16 @@
  """
 f = open('file/24.txt').read()
 f = f.split('F')
-s = -1
+s = 1
+d = 0
 for i in f:
-    if i.count('A') <= 2 and len(i) > s:
-        s = len(i)
-        d = f.index(i)
-if d != 0 or d != len(f) - 1:
-    print(s + 2)
-else:
-    print(s + 1)
+    if i.count('A') <= 2:
+        s += len(i)+1
+        if d < s:
+            d = s
+    else:
+        s = 1
+print(d)
 """Текстовый файл содержит строку из заглавных латинских букв X, Y и Z. Определите максимальное
 количество идущих подряд троек символов ZXY или ZYX.
 Ссылка на файл"""
