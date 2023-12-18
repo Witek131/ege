@@ -50,6 +50,7 @@ print(a, g)
  в заданном диапазоне. В python есть встроенный модуль fnmatch, которая позволяет сравнивать строковое 
  представление числа с маской (если не углубляться, то как в задании).'''
 from fnmatch import fnmatch
-for i in range(0,10**8,2014):
-    if fnmatch(str(i), '12*345'):
-        print(i,i//2014)
+
+for i in range(0, 10 ** 8, 2014):
+    if fnmatch(str(i), '12*345?'):
+        print(i, i // 2014)
