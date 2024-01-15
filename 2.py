@@ -23,24 +23,6 @@ w, x, y, z.
 #                     print(x, y, z, w)
 #                     # yxzw
 
-'''from itertools import *
-
-
-def f1(x, y, z, w):
-    return not (((not x or y) and (not y or w)) or (z == (x or y)))
-
-
-s = set()
-for a, b, c, d, e, f, g in product([0, 1], repeat=7):
-    rows = [[1, a, b, 1],
-            [1, c, d, e],
-            [f, 1, g, 1]]
-    print(rows)
-    for per in permutations('xyzw'):
-        if all([f1(**dict(zip(per, row))) == row[-1] for row in rows]):
-            s.add(per)
-print(s)
-'''
 from itertools import *
 
 
