@@ -23,7 +23,7 @@ w, x, y, z.
 #                     print(x, y, z, w)
 #                     # yxzw
 
-from itertools import *
+'''from itertools import *
 
 
 def f1(x, y, z, w):
@@ -35,8 +35,23 @@ for a, b, c, d, e, f, g in product([0, 1], repeat=7):
     rows = [[1, a, b, 1],
             [1, c, d, e],
             [f, 1, g, 1]]
-    #print(rows)
+    print(rows)
     for per in permutations('xyzw'):
         if all([f1(**dict(zip(per, row))) == row[-1] for row in rows]):
             s.add(per)
 print(s)
+'''
+from itertools import *
+
+
+def f(x, y, z, w):
+    return y and (x <= w) and ((not x) <= (w != z))
+for a, b, c, d, e in product([0, 1], repeat=5):
+    rows = [(0, 0, a, b), (0, c, d, 0), (1, 1, 1, e)]
+    valu = [1, 1, 0]
+    if len(set(rows)) != len(rows):
+        continue
+    for perm in permutations('xyzw'):
+        if all([f(**dict(zip(perm, row))) == val
+                for row, val in zip(rows, valu)]):
+            print(perm)
