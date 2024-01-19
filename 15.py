@@ -102,3 +102,4 @@ for i in range(1, 1000):
     if all(f1(x, i) for x in range(1, 1000)):
         s += 1
 print(s)
+
