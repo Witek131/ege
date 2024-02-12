@@ -23,8 +23,8 @@ w, x, y, z.
 #                     print(x, y, z, w)
 #                     # yxzw
 
-from itertools import *
 
+from itertools import *
 
 def f(x, y, z, w):
     # выражение из задания
@@ -41,7 +41,7 @@ for a, b, c, d, e in product([0, 1], repeat=5):
                 for row, val in zip(rows, valu)]):
             print(perm)
 
-
+'''
 def f(x, y, z, w):
     return (z <= w) and y and not x
 
@@ -67,3 +67,4 @@ for order in permutations('xywz'):
             # выводим найденную перестановку
             print(*order, sep='')
             break
+'''
