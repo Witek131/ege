@@ -12,10 +12,10 @@
 сети. Ответ запишите в виде десятичного числа.
 '''
 from ipaddress import *
-
 print(bin(176)[2:], bin(174)[2:], int('11100000', 2))
 for i in range(0, 33):
-    np = ip_network('120.91.176.205/' + str(i), 0)
-    mas = str(np).split('/')
-    if mas[0] == '120.91.174.205':
-        print(np, np.netmask)
+    for j in range(0, 33):
+        nnp1 = ip_network('120.91.176.205'+'/'+str(i),0)
+        nnp2 = ip_network('120.91.174.213' + '/' + str(j), 0)
+        if nnp1.network_address == nnp2.network_address:
+            print(min(nnp1.netmask, nnp2.netmask))
