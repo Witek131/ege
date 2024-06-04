@@ -9,7 +9,7 @@ s = 1
 d = 0
 for i in f:
     if i.count('A') <= 2:
-        s += len(i)+1
+        s += len(i) + 1
         if d < s:
             d = s
     else:
@@ -63,3 +63,10 @@ for i in s:
     if i.count('E') > i.count('A'):
         c += 1
 print(c)
+'''Текстовый файл состоит не более чем из 1 046 730 букв латинского алфавита.
+Определите максимальное количество идущих подряд символов, среди которых нет подстроки AHAHA.
+Для выполнения этого задания нужно написать программу.
+'''
+s = open('file/24ANANA.txt').read()
+s = s.replace('AHAHA', 'AHAH HAHA')
+print(max(map(len, s.split())))
