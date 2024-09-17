@@ -53,3 +53,9 @@ for i in range(0, 1000):
 
     if int(s, 2) > 105:
         print(i, int(s, 2))
+    """Перевод в n Систему счисления
+    k = ''
+    while a>0:
+        k=str(a%n)+k
+        a=a//n
+    Где n СС а число в 10 СС"""
