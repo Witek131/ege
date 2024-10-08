@@ -97,3 +97,34 @@ print(cnt)
 done()
 exit()
 """
+''' Черепахе был дан для исполнения следующий алгоритм: Повтори  [Вперёд 10 Направо 60].
+Определите, сколько точек с целочисленными координатами будут находиться внутри области,
+ограниченной линией, заданной данным алгоритмом. Точки на линии учитывать следует.
+from turtle import *
+
+color("green")
+k = 20
+speed(0)
+hideturtle()
+
+pd()
+begin_fill()
+for i in range(6):
+    forward(10*k)
+    right(60)
+end_fill()
+
+c = 0
+canvas = getcanvas()
+penup(); tracer(0)
+for x in range(-20*k, 20*k, k):
+    for y in range(-20*k, 20*k, k):
+        print(canvas.find_overlapping(x, y, x, y), x, y)
+        if canvas.find_overlapping(x, y, x, y):
+            c += 1
+            goto(x,-y); dot(5, 'blue')
+        else:
+            goto(x,-y); dot(3, 'gray')
+
+print(c)
+done()'''
