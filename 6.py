@@ -74,4 +74,26 @@ for x in range(1,10):
 print( count )
 
 """
+""" Черепахе был дан для исполнения следующий алгоритм: Повтори 7 [Вперёд 10 Направо 120].
+Определите, сколько точек с целочисленными координатами будут находиться внутри области,
+ограниченной линией, заданной данным алгоритмом. Точки на линии учитывать не следует.
+from turtle import *
+color("black", "red")
+m = 10
+begin_fill()
+for i in range(3):
+    fd(10 *m)
+    rt(120)
 
+end_fill()
+canvas = getcanvas()
+cnt = 0
+for y in range(-100*m, 100*m, m):
+    for x in range(-100*m, 100*m, m):
+        item = canvas.find_overlapping(x,y,x,y)
+        if len(item) == 1 and item[0] == 5:
+            cnt += 1
+print(cnt)
+done()
+exit()
+"""
