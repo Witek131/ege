@@ -12,5 +12,8 @@ for i in permutations('ABCDEFGH'):
     if s2 == s3:
         print('1 2 3 4 5 6 7 8')
         print(*i)
+# 1 2 3 4 5 6 7 8
+# H C A B F E G D (1 в 4 = 2 +2 в 7==21) Ответ 23
+
 
 
