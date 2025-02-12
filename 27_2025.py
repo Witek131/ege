@@ -1,3 +1,5 @@
+import math
+print(math.ceil(15000/1024))
 f = open('file/demo_2025_27_А.txt').read().split('\n')[1:]
 def centr(k):
     mc = 10 ** 20
@@ -13,7 +15,6 @@ def centr(k):
             mc = s
             xc, yc = x1, y1
     return xc, yc
-
 
 k1, k2 = [], []
 for s in f:
