@@ -35,8 +35,6 @@
 – у Вани нет стратегии, которая позволит ему гарантированно выиграть первым ходом.
 '''
 
-<<<<<<< HEAD
-
 def f(n, p):
     if n <= 12: return p % 2 == 0
     if p == 0:
@@ -46,17 +44,17 @@ def f(n, p):
 print([i for i in range(1000, 19, -1) if f(i, 2)])
 print([i for i in range(1000, 19, -1) if f(i, 3) and not f(i, 1)])
 print([i for i in range(1000, 19,-1) if f(i, 4) and not f(i, 2)])
-=======
-def f(s,m,p):
-    if s>141: return m%2 == 0
-    if m == 0: return 0
-    h=[]
-    if p != "+1": h+=[f(s + 1, m - 1, '+1')]
-    if p != "+2": h+=[f(s + 2, m - 1, '+2')]
-    if p != "*3": h+=[f(s * 3, m - 1, '*3')]
-    return any(h) if m%2!=0 else all(h)
+# =======
+# def f(s,m,p):
+#     if s>141: return m%2 == 0
+#     if m == 0: return 0
+#     h=[]
+#     if p != "+1": h+=[f(s + 1, m - 1, '+1')]
+#     if p != "+2": h+=[f(s + 2, m - 1, '+2')]
+#     if p != "*3": h+=[f(s * 3, m - 1, '*3')]
+#     return any(h) if m%2!=0 else all(h)
+#
+# print('19', [i for i in range(1,140) if f(i, 2, '')])
+# print('20', [i for i in range(1,140) if not f(i, 1, '') and f(i, 3, '')])
+# print('21', [i for i in range(1,140) if f(i, 2,'') or f(i, 4,'')])
 
-print('19', [i for i in range(1,140) if f(i, 2, '')])
-print('20', [i for i in range(1,140) if not f(i, 1, '') and f(i, 3, '')])
-print('21', [i for i in range(1,140) if f(i, 2,'') or f(i, 4,'')])
->>>>>>> origin/master
