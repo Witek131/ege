@@ -97,9 +97,10 @@ print(a, a[-1] - a[0])
 
 def f1(x, a):
     return (a % 25 == 0) and (((x % 24 == 0) and (x % 75 == 0)) <= (x % a == 0))
+
+
 s = 0
 for i in range(1, 1000):
     if all(f1(x, i) for x in range(1, 1000)):
         s += 1
 print(s)
-
